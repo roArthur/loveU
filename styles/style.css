@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #fddde6, #cdeefd);
+    display: flex;
+    justify-content: center;
+    
+    height: 100vh;
+    color: #333;
+  }
+  
+  .container1 {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    align-items: center;
+  }
+  .container {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  #category-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  #category-count {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .thoughts {
+    list-style: none;
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+  }
+  
+  .thoughts.show {
+    opacity: 1;
+  }
+  
+  .thoughts li {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+  }
+  
+  button {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: #ff8da1;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff7590;
+  }
+   
+  
