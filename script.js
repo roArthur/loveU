@@ -76,11 +76,6 @@ const slides = [
 const voltar = document.getElementById("voltar");
   
 voltar.addEventListener("click", () => {
-    currentSlide++;
-    if (currentSlide >= slides.length) {
-      // Redireciona para a página com todas as mensagens
       window.location.href = "index.html";
       return;
-    }
-    showSlide(currentSlide);
   });
