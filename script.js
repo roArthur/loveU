@@ -81,5 +81,6 @@ const slides = [
     }
     showSlide(currentSlide);
   });
+const voltar = document.getElementById("voltar");
   
 showSlide(currentSlide);
