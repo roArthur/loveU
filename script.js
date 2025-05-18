@@ -1,6 +1,6 @@
 const slides = [
     {
-        title: "",
+        title: "Baitolagem de aniversário",
         count: "",
         thoughts: [""]
       },
@@ -47,13 +47,21 @@ const slides = [
   const list = document.getElementById("thoughts-list");
   const button = document.getElementById("next-button");
   
+  
   function showSlide(index) {
     const slide = slides[index];
     title.textContent = slide.title;
     count.textContent = slide.count;
     list.innerHTML = "";
     list.classList.remove("show");
-  
+
+  if(currentSlide == 0){
+      button.textContent = 'Iniciar';
+    }
+    else{
+       button.textContent = 'Próximo';
+    }
+    
     setTimeout(() => {
       slide.thoughts.forEach(thought => {
         const li = document.createElement("li");
@@ -74,3 +82,4 @@ const slides = [
     showSlide(currentSlide);
   });
   
+showSlide(currentSlide);
