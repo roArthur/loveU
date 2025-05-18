@@ -56,7 +56,7 @@ const slides = [
     list.classList.remove("show");
 
   if(currentSlide == 0){
-      button.textContent = 'Inicia';
+      button.textContent = 'Iniciar';
     }
     else{
        button.textContent = 'Próximo';
