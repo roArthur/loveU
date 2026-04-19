@@ -1,26 +1,195 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pensei Em Você</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Para Você ❤️</title>
   <style>
-    body{
-        align-items: center;
-    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: white;
+  color: #ff6f91;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.timeline {
+  margin-bottom: 15px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.arrow {
+  font-size: 20px;
+}
+
+.dots {
+  margin-top: 15px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.dot.active {
+  opacity: 1;
+}
+
   </style>
 </head>
 <body>
-  <main class="container1">
-    <section class="card">
-      <h1 id="category-title"></h1>
-      <p id="category-count"></p>
-      <ul id="thoughts-list" class="thoughts"></ul>
-      <button id="next-button">Próximo</button>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
-</html>
+  <div class="container">
+    <h1>Pra Você 💖</h1>
+    <div class="timeline">
+      <span>18/06/2025</span>
+      <span class="arrow">→</span>
+      <span>18/04/2026</span>
+    </div><div class="carousel">
+  <div class="slides" id="slides">
+    <div class="slide">Você é a pessoa mais incrível que eu já conheci.</div>
+    <div class="slide">Seu sorriso melhora qualquer dia meu.</div>
+    <div class="slide">Eu amo cada detalhe em você.</div>
+    <div class="slide">Você faz minha vida muito mais feliz.</div>
+    <div class="slide">Eu tenho muita sorte de ter você.</div>
+    <div class="slide">Minha vida é mais colorida com você nela.</div>
+<div class="slide">Você é meu primeiro pensamento ao acordar e o último ao dormir.</div>
+<div class="slide">Eu amo a pessoa que você é e quem eu me torno quando estou com você.</div>
+<div class="slide">Seu abraço é o melhor lugar do mundo.</div>
+<div class="slide">Mal posso esperar para construir nosso futuro juntos.</div>
+<div class="slide">Você me inspira a ser alguém melhor todos os dias.</div>
+<div class="slide">Nossa conexão é algo mágico e único.</div>
+<div class="slide">Agradeço a cada dia por ter te encontrado.</div>
+<div class="slide">Você é tudo que eu sempre sonhei e muito mais.</div>
+<div class="slide">Meu amor por você só cresce a cada momento.</div>
+  </div>
+</div>
 
+<div class="buttons">
+  <button onclick="prevSlide()">←</button>
+  <button onclick="nextSlide()">→</button>
+</div>
+
+<div class="dots" id="dots"></div>
+
+  </div>  <script>
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    const dotsContainer = document.getElementById('dots');
+    let index = 0;
+
+    function updateCarousel() {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+      updateDots();
+    }
+
+    function nextSlide() {
+      index = (index + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function createDots() {
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.addEventListener('click', () => {
+          index = i;
+          updateCarousel();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    createDots();
+    updateCarousel();
+
+    // Auto play
+    setInterval(nextSlide, 4000);
+  </script></body>
+</html>    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    createDots();
+    updateCarousel();
+
+    // Auto play
+    setInterval(nextSlide, 4000);
+  </script></body>
+</html>
